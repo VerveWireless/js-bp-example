@@ -1,8 +1,9 @@
-# babel_bp_example
 
-Sample boilerplate for js libraries
+[![Code Climate](https://codeclimate.com/github/VerveWireless/js-bp-example/badges/gpa.svg)](https://codeclimate.com/github/VerveWireless/js-bp-example) [![Test Coverage](https://codeclimate.com/github/VerveWireless/js-bp-example/badges/coverage.svg)](https://codeclimate.com/github/VerveWireless/js-bp-example/coverage)
 
-# Setup
+# Sample boilerplate for js libraries
+
+## Setup
 
 Installation instructions can be found in full [here](https://github.com/babel/generator-babel-boilerplate), but to simplify the process just keep reading.
 
@@ -37,34 +38,29 @@ module: {
 },
 ```
 
-# Usage
+## Usage
 
 Project code should be written within the `src` directory. Babel will stream files from here during the build and test process. This project is not intended to support images and css assets but if the are needed see [Loading Additional Assets](#loading_addition_assets). Here are some useful commands that can be used for different purposes.
 
-## Development
+### Development
 
 `npm run watch`
 `npm run lint`
 `npm run coverage`
 
-## Build
+### Build
 
 `npm run build`
 
-## Testing
+### Testing
 
 `npm test` - Performs headless testing
 `npm run test-browser` Open `test/runner.html` for browser testing. This command works like the watch command, changes to the source files will cause the runner to reload.
 
-# Release & Project Versioning
+## Release & Project Versioning
 
 `TODO`
 
+## Loading Additional Assets
 
-
-
-[![Travis build status](http://img.shields.io/travis/dsgn1graphics/babel_bp_example.svg?style=flat)](https://travis-ci.org/dsgn1graphics/babel_bp_example)
-[![Code Climate](https://codeclimate.com/github/dsgn1graphics/babel_bp_example/badges/gpa.svg)](https://codeclimate.com/github/dsgn1graphics/babel_bp_example)
-[![Test Coverage](https://codeclimate.com/github/dsgn1graphics/babel_bp_example/badges/coverage.svg)](https://codeclimate.com/github/dsgn1graphics/babel_bp_example)
-[![Dependency Status](https://david-dm.org/dsgn1graphics/babel_bp_example.svg)](https://david-dm.org/dsgn1graphics/babel_bp_example)
-[![devDependency Status](https://david-dm.org/dsgn1graphics/babel_bp_example/dev-status.svg)](https://david-dm.org/dsgn1graphics/babel_bp_example#info=devDependencies)
+`TODO`
