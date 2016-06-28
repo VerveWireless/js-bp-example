@@ -8,10 +8,6 @@ eslint:
 ratings:
   paths:
   - "src/**.es6"
-  - "src/*/**.es6"
   - "src/**.js"
-  - "src/*/**.js"
   - "test/unit/**.js"
-  - "test/unit/*/**.js"
   - "test/unit/**.es6"
-  - "test/unit/*/**.es6"
