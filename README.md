@@ -1,7 +1,16 @@
 
-[![Code Climate](https://codeclimate.com/github/VerveWireless/js-bp-example/badges/gpa.svg)](https://codeclimate.com/github/VerveWireless/js-bp-example) [![Test Coverage](https://codeclimate.com/github/VerveWireless/js-bp-example/badges/coverage.svg)](https://codeclimate.com/github/VerveWireless/js-bp-example/coverage)
+[![Code Climate](https://codeclimate.com/github/VerveWireless/js-bp-example/badges/gpa.svg)](https://codeclimate.com/github/VerveWireless/js-bp-example)
 
 # Sample boilerplate for js libraries
+
+Example setup of [generator-babel-boilerplate](https://github.com/babel/generator-babel-boilerplate)
+
+Pros:
+- Server and browser support with Babel
+- Compile time managed via Webpack
+- Project structure easy to follow
+- Easy github integration for third party triggers
+-
 
 ## Setup
 
@@ -15,7 +24,7 @@ Install `yo` and the default boilerplate generator
 
 Create the directory you wish to use for your project and cd into that directory
 
-`mkdir <project name> | cd <project name>`
+`mkdir <project name>; cd <project name>`
 
 Build the new project and fill in the onscreen options when prompted.
 
@@ -40,7 +49,7 @@ module: {
 
 ## Usage
 
-Project code should be written within the `src` directory. Babel will stream files from here during the build and test process. This project is not intended to support images and css assets but if the are needed see [Loading Additional Assets](#loading_addition_assets). Here are some useful commands that can be used for different purposes.
+Project code should be written within the `src` directory. Babel will stream files from here during the build and test process. This project is not intended to support images and css assets but if the are needed see [Loading Additional Assets](#loading-addition-assets). Here are some useful commands that can be used for different purposes.
 
 ### Development
 
@@ -50,17 +59,38 @@ Project code should be written within the `src` directory. Babel will stream fil
 
 ### Build
 
-`npm run build`
+`npm run build` - Creates a dist directory if one does not exist, build .js, .min.js and source map files for each
 
 ### Testing
 
 `npm test` - Performs headless testing
 `npm run test-browser` Open `test/runner.html` for browser testing. This command works like the watch command, changes to the source files will cause the runner to reload.
 
-## Release & Project Versioning
+## Releases & Project Versioning
 
 `TODO`
 
 ## Loading Additional Assets
 
-`TODO`
+If you find yourself writing libraries that need to handle asset management, add the following changes to the `gulpfile.js` within `function build()`. This snippet uses [SASS](http://sass-lang.com/), but can be easily modified to use [LESS](http://lesscss.org/) or another precompiled scripting language.
+
+```
+resolve: {
+  extensions: ['', '.js', '.json', '.css', '.scss'],
+},
+
+module: {
+  ...,
+  loaders: [
+    ...,
+    {test: /\.(scss|css)$/, loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader?outputStyle=expanded'},
+    {test: /\.(png|jpg|jpeg|gif|svg|otf|eot|ttf|woff|woff2)?$/, loader: 'url-loader!limit=10000'},
+  ]
+}
+```
+
+Run the following command to install the necessary packages
+
+`npm i --save-dev style-loader css-loader autoprefixer-loader sass-loader url-loader`
+
+

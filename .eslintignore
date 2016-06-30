@@ -1,1 +1,5 @@
 **/*{.,-}min.js
+
+# Ignore spec setup
+test/setup
+test/runner.html
