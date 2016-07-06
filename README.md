@@ -47,6 +47,28 @@ module: {
 },
 ```
 
+#### Config
+
+Init new repo with `git init` and update the `.gitignore` file. The `.gitignore` at the root of this repository can be used as a starting place.
+
+This repo is setup to complie es6 and babel by default. Configure eslint to use es6 and babel by adding the following lines to the `.eslintrc` file.
+
+```
+{
+  ...,
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "babel"
+  ]
+}
+```
+
+Eslint rules may be different per project so I'm not including all of rules in this documentation. A complete sample set of rules are located within the `.eslintrc` file at the root of this repository. Take a look at them and copy all that may be required. This list consist of the present set of rules that are used in other js environments within the Verve software suite.
+
 ## Usage
 
 Project code should be written within the `src` directory. Babel will stream files from here during the build and test process. This project is not intended to support images and css assets but if the are needed see [Loading Additional Assets](#loading-addition-assets). Here are some useful commands that can be used for different purposes.
