@@ -49,6 +49,10 @@ module: {
 
 #### Config
 
+Remove the generated travis config file
+
+`rm .travis.yml`
+
 Init new repo with `git init` and update the `.gitignore` file. The `.gitignore` at the root of this repository can be used as a starting place.
 
 This repo is setup to complie es6 and babel by default. Configure eslint to use es6 and babel by adding the following lines to the `.eslintrc` file.
@@ -67,7 +71,21 @@ This repo is setup to complie es6 and babel by default. Configure eslint to use 
 }
 ```
 
+Install the plugin to enable babel rules
+
+`npm install eslint-plugin-babel --save-dev`
+
 Eslint rules may be different per project so I'm not including all of rules in this documentation. A complete sample set of rules are located within the `.eslintrc` file at the root of this repository. Take a look at them and copy all that may be required. This list consist of the present set of rules that are used in other js environments within the Verve software suite.
+
+Create the `.eslintignore` and add the following lines to make life easier.
+
+```
+**/*{.,-}min.js
+
+# Ignore spec setup
+test/setup
+test/runner.html
+```
 
 ## Usage
 
